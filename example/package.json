@@ -1,0 +1,18 @@
+{
+  "name": "shared-context-example",
+  "version": "1.0.0",
+  "description": "An example of using shared context middelware in an app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wes Todd",
+  "license": "ISC",
+  "dependencies": {
+    "browserify-middleware": "^7.0.0",
+    "consolidate": "^0.14.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "nighthawk": "^1.3.0"
+  }
+}

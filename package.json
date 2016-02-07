@@ -1,0 +1,36 @@
+{
+  "name": "shared-context",
+  "version": "1.0.0",
+  "description": "Share data with the browser with automatic escaping",
+  "main": "index.js",
+  "scripts": {
+    "test": "happiness && mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/wesleytodd/shared-context.git"
+  },
+  "keywords": [
+    "data",
+    "universal",
+    "isomorphic",
+    "context",
+    "middleware",
+    "express",
+    "connect"
+  ],
+  "author": "Wes Todd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wesleytodd/shared-context/issues"
+  },
+  "homepage": "https://github.com/wesleytodd/shared-context#readme",
+  "devDependencies": {
+    "happiness": "^5.5.0",
+    "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "recursive-escape": "^1.0.0",
+    "recursive-unescape": "^1.0.0"
+  }
+}

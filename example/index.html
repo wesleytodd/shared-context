@@ -1,0 +1,13 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<h1><%= context.title %></h1>
+		<p><%= context.content %></p>
+		
+		<script>
+			__context = <%- JSON.stringify(context) %>
+		</script>
+		<script src="/static/browser.js"></script>
+	</body>
+</html>

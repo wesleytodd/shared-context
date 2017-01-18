@@ -84,4 +84,16 @@ describe('Shared Context', function () {
 			done();
 		});
 	});
+
+	it('should escape when passed to JSON.stringify', function (done) {
+		var sc = sharedContext();
+		var res = { locals: {} };
+		sc({}, res, function () {
+			res.locals.context.foo = '<script>alert("u ben haxed");</script>';
+
+			var out = JSON.parse(JSON.stringify(res.locals.context));
+			assert.equal(out.foo, '&lt;script&gt;alert(&quot;u ben haxed&quot;);&lt;/script&gt;');
+			done();
+		});
+	});
 });

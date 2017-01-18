@@ -28,8 +28,15 @@ var sharedContext = require('shared-context');
 
 app.use(sharedContext({
 	// Options and their defaults
-	// browserVar: '__context'
-	// localsVar: 'context'
+
+	// The global variable which should be set and loaded from
+	// browserVar: '__context',
+
+	// The variable which is set on `res.locals`
+	// localsVar: 'context',
+
+	// Set globals that are included in every request
+	// globals: {}
 }));
 
 app.get('/', function (req, res) {

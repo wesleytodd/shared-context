@@ -63,4 +63,25 @@ describe('Shared Context', function () {
 			done();
 		});
 	});
+
+	it('should extend globals', function (done) {
+		var sc = sharedContext({
+			globals: {
+				foo: 'bar',
+				bar: 'foo'
+			}
+		});
+		var res = { locals: {} };
+		sc({}, res, function () {
+			// Set as if in other middleware
+			res.locals.context.bar = 'baz';
+			res.locals.context.baz = 'far';
+
+			assert(res.locals.context);
+			assert.equal(res.locals.context.foo, 'bar');
+			assert.equal(res.locals.context.bar, 'baz');
+			assert.equal(res.locals.context.baz, 'far');
+			done();
+		});
+	});
 });

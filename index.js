@@ -1,3 +1,4 @@
+var setPrototypeOf = require('setprototypeof');
 var escape = require('recursive-escape');
 var unescape = require('recursive-unescape');
 
@@ -19,6 +20,11 @@ module.exports = function setupSharedContext (opts) {
 			// page load in a single page app,
 			// we just initialize an empty object
 			res.locals[opts.localsVar] = {};
+		}
+
+		// Extend from globals
+		if (opts.globals) {
+			setPrototypeOf(res.locals[opts.localsVar], opts.globals);
 		}
 
 		// Override toJSON so the data is escaped correctly for

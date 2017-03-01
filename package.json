@@ -1,6 +1,6 @@
 {
   "name": "shared-context",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Share data with the browser with automatic escaping",
   "main": "index.js",
   "scripts": {

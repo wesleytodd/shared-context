@@ -29,37 +29,30 @@ describe('Shared Context', function () {
 	});
 
 	it('should load values from the window in the browser', function (done) {
-		// Mock out window
-		var _win = global.window;
-		global.window = {
-			__context: { foo: 'bar' }
-		};
-
-		var sc = sharedContext();
+		var sc = sharedContext({
+			window: {
+				__context: { foo: 'bar' }
+			}
+		});
 		var res = {locals: {}};
 		sc({}, res, function () {
 			assert(res.locals.context);
 			assert.equal(res.locals.context.foo, 'bar');
-			global.window = _win;
 			done();
 		});
 	});
 
 	it('should accept browserVar option', function (done) {
-		// Mock out window
-		var _win = global.window;
-		global.window = {
-			__customVar: { foo: 'bar' }
-		};
-
 		var sc = sharedContext({
-			browserVar: '__customVar'
+			browserVar: '__customVar',
+			window: {
+				__customVar: { foo: 'bar' }
+			}
 		});
 		var res = {locals: {}};
 		sc({}, res, function () {
 			assert(res.locals.context);
 			assert.equal(res.locals.context.foo, 'bar');
-			global.window = _win;
 			done();
 		});
 	});

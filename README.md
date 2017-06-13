@@ -35,7 +35,9 @@ app.use(sharedContext({
 	// The variable which is set on `res.locals`
 	// localsVar: 'context',
 
-	// Set globals that are included in every request
+	// Set globals that are included in every request,
+	// even front-end page changes with a FE router like nighthawk
+	// globalsVar: '__$globals',
 	// globals: {}
 }));
 

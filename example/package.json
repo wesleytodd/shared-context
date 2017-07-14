@@ -13,6 +13,7 @@
     "consolidate": "^0.14.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
+    "is-browser": "^2.0.1",
     "nighthawk": "^1.3.0"
   }
 }

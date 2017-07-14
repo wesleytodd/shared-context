@@ -2,9 +2,9 @@
 	<head>
 	</head>
 	<body>
-		<h1><%= context.title %></h1>
-		<p><%= context.content %></p>
-		
+		<h1 id="title"><%= context.title %></h1>
+		<p id="content"><%= context.content %></p>
+		<a href="/">Home</a> | <a href="/foo">More Foo</a> | <a href="/bar">The Bar</a>
 		<script>
 			__context = <%- JSON.stringify(context) %>
 		</script>

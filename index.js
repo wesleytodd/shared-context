@@ -69,11 +69,13 @@ module.exports = function setupSharedContext (_opts) {
 			res.locals[localsVar] = Object.create(globals);
 
 			// Track which keys should be persisted through route changes as globals,
-			// non-configurable/modifiable but enumerable
-			Object.defineProperty(res.locals[localsVar], globalsVar, {
-				value: globalKeys,
-				enumerable: true
-			});
+			// non-configurable/modifiable but enumerable, only on backend
+			if (!_window) {
+				Object.defineProperty(res.locals[localsVar], globalsVar, {
+					value: globalKeys,
+					enumerable: true
+				});
+			}
 		}
 
 		// Continue on good sir..
